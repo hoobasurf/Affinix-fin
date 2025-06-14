@@ -43,27 +43,47 @@ body.home {
 }
 
 
-/* === TOKYO === */
+/* === TOKYO (SALLE) === */
 body.tokyo {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-color: #000000; /* couleur pour combler les bandes vides */
-  background-image: url('../images/fond-tokyo.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;     /* affiche toute l’image sans la couper */
-  background-attachment: fixed;
+  background-color: #000000;
   font-family: 'Arial', sans-serif;
+}
+
+.image-container {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fond {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none; /* Permet aux clics de passer à travers */
+  z-index: 5;
 }
 
 .panel {
   position: absolute;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
+  z-index: 10;
 }
 
 .panel:hover {
@@ -80,14 +100,9 @@ body.tokyo {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  body.tokyo {
-    background-color: #000000;
-    background-image: url('../images/fond-tokyo.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-attachment: scroll; /* scroll pour mobiles */
-    max-height: 100vh;
+  .fond,
+  .overlay {
+    object-fit: contain;
   }
 
   .panel {
