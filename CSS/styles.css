@@ -104,7 +104,15 @@ body.tokyo {
   pointer-events: none; /* important : image visible mais ne bloque pas les clics */
   z-index: 1;
 }
-
 .panel {
   z-index: 2; /* pour que les panneaux cliquables restent actifs */
+}
+  .boutons-superposes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* pour que les panneaux restent cliquables */
+  z-index: 1;
 }
