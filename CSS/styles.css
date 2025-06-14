@@ -94,4 +94,17 @@ body.tokyo {
     max-width: 90% !important;
     left: 5% !important;
   }
+.img-boutons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  pointer-events: none; /* important : image visible mais ne bloque pas les clics */
+  z-index: 1;
+}
+
+.panel {
+  z-index: 2; /* pour que les panneaux cliquables restent actifs */
 }
