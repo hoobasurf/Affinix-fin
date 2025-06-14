@@ -63,10 +63,12 @@ body.tokyo {
 .panel {
   position: absolute;
   cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out;
+  z-index: 2;
+  transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
 }
 
 .panel:hover {
+  transform: scale(1.1);
   box-shadow: 0 0 20px 5px currentColor;
 }
 
