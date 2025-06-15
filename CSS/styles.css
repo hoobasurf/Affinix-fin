@@ -1,69 +1,31 @@
-/* === TOKYO === */
-body.tokyo {
+body, html {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
   overflow: hidden;
-  background-color: #000;
-  background-image: url('../images/fond-tokyo.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
-  font-family: Arial, sans-serif;
-  position: relative;
 }
 
-.boutons-superposes {
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none; /* image visible mais ne bloque pas les clics */
-  z-index: 1;
+  z-index: 0;
 }
 
-.panel {
+.overlay {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   position: absolute;
-  cursor: pointer;
-  z-index: 2;
-  /* invisible mais réactif, on ajoute une bordure transparente pour faciliter le hover sur mobile */
-  background-color: transparent;
-  transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
-  border-radius: 8px;
-  /* optionnel : pour rendre la zone plus évidente au clavier */
-  outline-offset: 3px;
-}
-
-.panel:hover,
-.panel:focus {
-  transform: scale(1.1);
-  box-shadow:
-    0 0 10px 3px currentColor,
-    0 0 20px 6px currentColor;
-  outline: none;
-}
-
-/* Couleurs néon selon le panneau */
-.panel[onclick*="rencontre-amicale"] { color: #00ffff; }
-.panel[onclick*="relation-serieuse"] { color: #ff66ff; }
-.panel[onclick*="rencontre-fun"]     { color: #ffcc00; }
-.panel[onclick*="parents"]           { color: #ff3366; }
-.panel[onclick*="retour"]            { color: #66ff66; }
-.panel[onclick*="createur"]          { color: #9966ff; }
-
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  body.tokyo {
-    background-attachment: scroll; /* scroll sur mobile */
-    background-size: contain;
-  }
-
-  .panel {
-    max-width: 90% !important;
-    left: 5% !important;
-  }
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
